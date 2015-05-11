@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20150509194019) do
 
   create_table "clothes", force: :cascade do |t|
-    t.integer  "inventroy_id"
+    t.integer  "inventory_id"
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "clothes", ["inventroy_id"], name: "index_clothes_on_inventroy_id"
+  add_index "clothes", ["inventory_id"], name: "index_clothes_on_inventory_id"
 
   create_table "inventories", force: :cascade do |t|
     t.integer  "user_id"

@@ -1,2 +1,11 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="main">
+	<div class="login">
+		<%= link_to "Login", new_user_session_path %>
+		<br>	
+		<%= link_to "Sing Out", destroy_user_session_path, method: :delete %>
+	</div>
+	<br>
+	<div class="options">
+		<%= link_to "Show Inventory", inventory_index_path %>			
+	</div>
+</div>
