@@ -15,12 +15,18 @@ ActiveRecord::Schema.define(version: 20150509194019) do
 
   create_table "clothes", force: :cascade do |t|
     t.integer  "inventory_id"
+    t.integer  "occasion_id"
+    t.integer  "season_id"
+    t.integer  "type_id"
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   add_index "clothes", ["inventory_id"], name: "index_clothes_on_inventory_id"
+  add_index "clothes", ["occasion_id"], name: "index_clothes_on_occasion_id"
+  add_index "clothes", ["season_id"], name: "index_clothes_on_season_id"
+  add_index "clothes", ["type_id"], name: "index_clothes_on_type_id"
 
   create_table "inventories", force: :cascade do |t|
     t.integer  "user_id"
@@ -31,31 +37,22 @@ ActiveRecord::Schema.define(version: 20150509194019) do
   add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
 
   create_table "occasions", force: :cascade do |t|
-    t.integer  "clothes_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "occasions", ["clothes_id"], name: "index_occasions_on_clothes_id"
 
   create_table "seasons", force: :cascade do |t|
-    t.integer  "clothes_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "seasons", ["clothes_id"], name: "index_seasons_on_clothes_id"
 
   create_table "types", force: :cascade do |t|
-    t.integer  "clothes_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "types", ["clothes_id"], name: "index_types_on_clothes_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
