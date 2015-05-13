@@ -1,3 +1,3 @@
 class Clothe < ActiveRecord::Base
-  belongs_to :inventroy
+  belongs_to :inventory
 end

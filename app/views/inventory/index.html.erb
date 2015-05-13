@@ -1,5 +1,12 @@
-<div>
-	<% @clothes.each do |c| %>
-		<h3><%= link_to c.text, c %></h3>			
-	<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="img">
+				<%= link_to (image_tag "corbata.png"), inventory_path(type: "corbata"), method: :put%>
+				<%= link_to (image_tag "corpinio.png"), inventory_path(type: "corpinio"), method: :put%>
+				<%= link_to (image_tag "pantalon.png"), inventory_path(type: "pantalon"), method: :put%>
+				<%= link_to (image_tag "remera.png"), inventory_path(type: "remera"), method: :put%>
+			</div>
+		</div>			
+	</div>
 </div>

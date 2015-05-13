@@ -5,8 +5,10 @@ class InventoryController < ApplicationController
 		@clothes = Clothe.all
   end
 
-  def new
+  def create
   	
+  	@clothe = Clothe.
+
   end
 
   def show
